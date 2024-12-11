@@ -1,0 +1,12 @@
+# Visual Studio klasörleri
+.vs/
+.vscode/
+bin/
+obj/
+
+# Diðer gereksiz dosyalar
+*.user
+*.userosscache
+*.suo
+*.userprefs
+

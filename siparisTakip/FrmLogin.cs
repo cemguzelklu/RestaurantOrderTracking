@@ -43,7 +43,7 @@ namespace siparisTakip
                 {
                     conn.Open();
                     string query = "SELECT r.RolAdi FROM Kullanici k " +
-                                   "JOIN CalisanRol cr ON k.Id = cr.KullaniciID " +
+                                   "JOIN KullaniciRol cr ON k.Id = cr.KullaniciID " +
                                    "JOIN Rol r ON cr.RolID = r.Id " +
                                    "WHERE Eposta = @Eposta AND Sifre = @Sifre";
 
@@ -62,8 +62,8 @@ namespace siparisTakip
                             // Yönetici ise ana sayfaya yönlendir
                             if (rol == "Yönetici")
                             {
-                                FrmAna frmAna = new FrmAna();
-                                frmAna.Show();
+                                FrmYonetici frmYonetici = new FrmYonetici();
+                                frmYonetici.Show();
                                 this.Hide(); // Giriş ekranını gizle
                             }
                             else if (rol == "Çalışan")
@@ -106,6 +106,7 @@ namespace siparisTakip
         {
             FrmKayıt frmKayıt = new FrmKayıt();
             frmKayıt.Show();
+            this.Hide();
         }
     }
 }

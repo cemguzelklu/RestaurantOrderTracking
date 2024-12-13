@@ -34,8 +34,9 @@ namespace siparisTakip
 
                     // SQL Sorgusu
                     string query = "INSERT INTO Kullanici (Ad, Soyad, Eposta, Sifre, TelefonNumarasi, Adres) " +
-                                   "VALUES (@Ad, @Soyad, @Eposta, @Sifre, @TelefonNumarasi, @Adres)";
-
+                           "VALUES (@Ad, @Soyad, @Eposta, @Sifre, @TelefonNumarasi, @Adres); " +
+                           "DECLARE @KullaniciID INT = SCOPE_IDENTITY(); " +
+                           "INSERT INTO KullaniciRol (KullaniciID, RolID) VALUES (@KullaniciID, 3);";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         // Parametreleri ekle

@@ -50,11 +50,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmAna.cs">
+    <Compile Include="FrmCalisanEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAna.Designer.cs">
-      <DependentUpon>FrmAna.cs</DependentUpon>
+    <Compile Include="FrmCalisanEkle.Designer.cs">
+      <DependentUpon>FrmCalisanEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCalisanSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCalisanSil.Designer.cs">
+      <DependentUpon>FrmCalisanSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUrunEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUrunEkle.Designer.cs">
+      <DependentUpon>FrmUrunEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUrunGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUrunGuncelle.Designer.cs">
+      <DependentUpon>FrmUrunGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUrunSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUrunSil.Designer.cs">
+      <DependentUpon>FrmUrunSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmYonetici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmYonetici.Designer.cs">
+      <DependentUpon>FrmYonetici.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCalisan.cs">
       <SubType>Form</SubType>
@@ -82,8 +112,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmAna.resx">
-      <DependentUpon>FrmAna.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCalisanEkle.resx">
+      <DependentUpon>FrmCalisanEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCalisanSil.resx">
+      <DependentUpon>FrmCalisanSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUrunEkle.resx">
+      <DependentUpon>FrmUrunEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUrunGuncelle.resx">
+      <DependentUpon>FrmUrunGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUrunSil.resx">
+      <DependentUpon>FrmUrunSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmYonetici.resx">
+      <DependentUpon>FrmYonetici.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKayıt.resx">
       <DependentUpon>FrmKayıt.cs</DependentUpon>

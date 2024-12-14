@@ -28,76 +28,124 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmYonetici));
             this.btnCalisanEkle = new System.Windows.Forms.Button();
             this.btnCalisanSil = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalisanEkle
             // 
-            this.btnCalisanEkle.Location = new System.Drawing.Point(85, 100);
+            this.btnCalisanEkle.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCalisanEkle.Location = new System.Drawing.Point(26, 39);
             this.btnCalisanEkle.Name = "btnCalisanEkle";
             this.btnCalisanEkle.Size = new System.Drawing.Size(98, 47);
             this.btnCalisanEkle.TabIndex = 0;
-            this.btnCalisanEkle.Text = "Çalışan Ekle";
-            this.btnCalisanEkle.UseVisualStyleBackColor = true;
+            this.btnCalisanEkle.Text = "Personel Ekle";
+            this.btnCalisanEkle.UseVisualStyleBackColor = false;
             this.btnCalisanEkle.Click += new System.EventHandler(this.btnCalisanEkle_Click);
             // 
             // btnCalisanSil
             // 
-            this.btnCalisanSil.Location = new System.Drawing.Point(85, 209);
+            this.btnCalisanSil.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnCalisanSil.Location = new System.Drawing.Point(26, 114);
             this.btnCalisanSil.Name = "btnCalisanSil";
             this.btnCalisanSil.Size = new System.Drawing.Size(98, 46);
             this.btnCalisanSil.TabIndex = 2;
-            this.btnCalisanSil.Text = "Çalışan Sil";
-            this.btnCalisanSil.UseVisualStyleBackColor = true;
+            this.btnCalisanSil.Text = "Personel Sil";
+            this.btnCalisanSil.UseVisualStyleBackColor = false;
             this.btnCalisanSil.Click += new System.EventHandler(this.btnCalisanSil_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(248, 100);
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Location = new System.Drawing.Point(14, 57);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(98, 47);
             this.button1.TabIndex = 3;
             this.button1.Text = "Ürün Ekle";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(248, 209);
+            this.button2.BackColor = System.Drawing.Color.DarkOrange;
+            this.button2.Location = new System.Drawing.Point(14, 132);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(98, 46);
             this.button2.TabIndex = 4;
             this.button2.Text = "Ürün Sil";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(248, 309);
+            this.btnGuncelle.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGuncelle.Location = new System.Drawing.Point(14, 212);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(98, 46);
             this.btnGuncelle.TabIndex = 5;
             this.btnGuncelle.Text = "Ürün Güncelle";
-            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.UseVisualStyleBackColor = false;
             this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnCalisanSil);
+            this.groupBox1.Controls.Add(this.btnCalisanEkle);
+            this.groupBox1.Location = new System.Drawing.Point(54, 118);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(156, 198);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Personel İşlemleri";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(286, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(229, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnGuncelle);
+            this.groupBox2.Controls.Add(this.button2);
+            this.groupBox2.Controls.Add(this.button1);
+            this.groupBox2.Location = new System.Drawing.Point(286, 100);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(144, 324);
+            this.groupBox2.TabIndex = 8;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Menü İşlemleri";
             // 
             // FrmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnGuncelle);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btnCalisanSil);
-            this.Controls.Add(this.btnCalisanEkle);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmYonetici";
             this.Text = "FrmYonetici";
             this.Load += new System.EventHandler(this.FrmYonetici_Load);
+            this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -109,5 +157,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnGuncelle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }

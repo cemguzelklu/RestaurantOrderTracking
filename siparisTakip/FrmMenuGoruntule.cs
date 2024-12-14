@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace siparisTakip
 {
-    public partial class FrmMusteri : Form
+    public partial class FrmMenuGoruntule : Form
     {
-        public FrmMusteri()
+        public FrmMenuGoruntule()
         {
             InitializeComponent();
         }
 
-        private void btnMenuGoruntule_Click(object sender, EventArgs e)
+        private void FrmMenuGoruntule_Load(object sender, EventArgs e)
         {
-            FrmMenuGoruntule frmMenuGoruntule =new FrmMenuGoruntule();
-            
+
+        }
+
+        private void dgvUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

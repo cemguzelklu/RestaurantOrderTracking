@@ -50,5 +50,10 @@ namespace siparisTakip
             FrmUrunGuncelle frmUrunGuncelle = new FrmUrunGuncelle();
             frmUrunGuncelle.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

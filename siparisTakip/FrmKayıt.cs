@@ -76,7 +76,7 @@ namespace siparisTakip
 
         // Şifre doğrulama fonksiyonu
         private bool IsValidPassword(string password)
-        {
+        {            // deneme
             // Şifrede en az bir büyük harf, bir küçük harf ve 8 karakter olmalı
             string pattern = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$";
             Regex regex = new Regex(pattern);

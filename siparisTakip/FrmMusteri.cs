@@ -20,6 +20,7 @@ namespace siparisTakip
         private void btnMenuGoruntule_Click(object sender, EventArgs e)
         {
             FrmMenuGoruntule frmMenuGoruntule =new FrmMenuGoruntule();
+            frmMenuGoruntule.ShowDialog();
             
         }
     }

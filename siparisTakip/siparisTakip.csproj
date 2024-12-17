@@ -68,6 +68,18 @@
     <Compile Include="FrmMenuGoruntule.Designer.cs">
       <DependentUpon>FrmMenuGoruntule.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOdeme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdeme.Designer.cs">
+      <DependentUpon>FrmOdeme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSepet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSepet.Designer.cs">
+      <DependentUpon>FrmSepet.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUrunEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +130,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SepetUrun.cs" />
+    <Compile Include="Urun.cs" />
     <EmbeddedResource Include="FrmCalisanEkle.resx">
       <DependentUpon>FrmCalisanEkle.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMusteri.resx">
       <DependentUpon>FrmMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdeme.resx">
+      <DependentUpon>FrmOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSepet.resx">
+      <DependentUpon>FrmSepet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUrunEkle.resx">
       <DependentUpon>FrmUrunEkle.cs</DependentUpon>

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -17,7 +16,6 @@ namespace siparisTakip
             dgvSepet.DataSource = null;
             dgvSepet.DataSource = FrmMenuGoruntule.sepet;
             dgvSepet.AutoGenerateColumns = true;
-
             ToplamTutariGuncelle();
         }
 
@@ -36,17 +34,15 @@ namespace siparisTakip
             if (dgvSepet.CurrentRow != null)
             {
                 var secilenUrun = (SepetUrun)dgvSepet.CurrentRow.DataBoundItem;
-
-                // Miktarı güncelle
                 secilenUrun.Miktar += miktarDegisiklik;
 
-                if (secilenUrun.Miktar <= 0) // Eğer miktar sıfır veya daha küçükse ürünü listeden kaldır
+                if (secilenUrun.Miktar <= 0)
                 {
                     FrmMenuGoruntule.sepet.Remove(secilenUrun);
                 }
 
-                dgvSepet.Refresh(); // DataGridView'i güncelle
-                ToplamTutariGuncelle(); // Toplam tutarı yeniden hesapla
+                dgvSepet.Refresh();
+                ToplamTutariGuncelle();
             }
             else
             {
@@ -62,13 +58,9 @@ namespace siparisTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Siparişiniz onaylandı!");
-            FrmMenuGoruntule.sepet.Clear();
-
-            dgvSepet.DataSource = null;
-            dgvSepet.DataSource = FrmMenuGoruntule.sepet;
-
-            ToplamTutariGuncelle(); // Sipariş onaylanınca tutarı sıfırla
+            FrmOdeme odemeSayfasi = new FrmOdeme();
+            odemeSayfasi.ToplamTutar = FrmMenuGoruntule.sepet.Sum(u => u.Fiyat * u.Miktar);
+            odemeSayfasi.ShowDialog();
         }
     }
 }

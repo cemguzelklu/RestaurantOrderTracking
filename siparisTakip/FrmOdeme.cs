@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -31,11 +30,11 @@ namespace siparisTakip
         {
             if (rbKart.Checked && KartBilgileriGecerliMi())
             {
-                SiparisOlustur("Kart");
+                SiparisOlustur("Kredi Karti İle Ödeme");
             }
             else if (rbNakit.Checked)
             {
-                SiparisOlustur("Nakit");
+                SiparisOlustur("Kapıda Ödeme");
             }
             else
             {
@@ -55,36 +54,27 @@ namespace siparisTakip
             }
             return true;
         }
+
         private int GetOdemeYontemiID(string odemeYontemi)
         {
             int odemeYontemiID = 0;
-
             string query = "SELECT Id FROM OdemeYontem WHERE YontemAdi = @YontemAdi";
 
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                try
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, con))
+                    cmd.Parameters.AddWithValue("@YontemAdi", odemeYontemi);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
                     {
-                        cmd.Parameters.AddWithValue("@YontemAdi", odemeYontemi);
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            odemeYontemiID = Convert.ToInt32(result);
-                        }
+                        odemeYontemiID = Convert.ToInt32(result);
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Hata: " + ex.Message);
-                }
             }
-
             return odemeYontemiID;
         }
-
 
         private void SiparisOlustur(string odemeYontemi)
         {
@@ -94,37 +84,37 @@ namespace siparisTakip
                 {
                     con.Open();
 
-                    // 'OdemeYontem' tablosundaki 'YontemAdi' değerine göre ödeme yöntemini alıyoruz
                     string query = @"
-                -- Değişkenleri tanımlıyoruz
-DECLARE @SiparisID INT;
-DECLARE @MusteriID INT = 1; -- Örnek MusteriID, bunu kullanıcıdan alıyorsunuz
-DECLARE @ToplamTutar DECIMAL(10, 2) = 150.00; -- Örnek ToplamTutar, bunu hesaplayarak alıyorsunuz
-DECLARE @OdemeYontemi NVARCHAR(100) = 'Kredi Kartı'; -- Örnek ödeme yöntemi, kullanıcıdan alıyorsunuz
+                DECLARE @SiparisID INT;
+                DECLARE @OdemeYontemID INT;
 
--- Yeni bir sipariş ekliyoruz ve ID'yi @SiparisID'ye alıyoruz
-INSERT INTO Siparis (MusteriID, ToplamTutar)
-VALUES (@MusteriID, @ToplamTutar);
+                SELECT @OdemeYontemID = Id 
+                FROM OdemeYontem 
+                WHERE YontemAdi = @YontemAdi;
 
--- Son eklenen siparişin ID'sini almak için OUTPUT kullanıyoruz
-SET @SiparisID = SCOPE_IDENTITY();
+                IF (@OdemeYontemID IS NULL)
+                BEGIN
+                    RAISERROR('Geçerli bir ödeme yöntemi bulunamadı.', 16, 1);
+                    RETURN;
+                END
 
--- Sipariş Detaylarını ekliyoruz
-INSERT INTO SiparisDetay (SiparisID, UrunID, Miktar, OdemeYontemID, SiparisDurum)
-SELECT @SiparisID, SU.UrunID, SU.Miktar, O.Id, 1 -- Beklemede durumu için '1'
-FROM SepetUrun SU
-JOIN Sepet S ON S.Id = SU.SepetID
-JOIN OdemeYontem O ON O.YontemAdi = @OdemeYontemi -- Ödeme yöntemine göre ID alıyoruz
-WHERE S.MusteriID = @MusteriID;
+                INSERT INTO Siparis (MusteriID, ToplamTutar)
+                VALUES (@MusteriID, @ToplamTutar);
 
+                SET @SiparisID = SCOPE_IDENTITY();
 
-";
+                INSERT INTO SiparisDetay (SiparisID, UrunID, Miktar, OdemeYontemID, SiparisDurum)
+                SELECT @SiparisID, SU.UrunID, SU.Miktar, @OdemeYontemID, 1 -- SiparişDurum: Beklemede
+                FROM SepetUrun SU
+                JOIN Sepet S ON S.Id = SU.SepetID
+                WHERE S.MusteriID = @MusteriID;
+            ";
 
                     using (SqlCommand cmd = new SqlCommand(query, con))
                     {
-                        cmd.Parameters.AddWithValue("@Tarih", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@YontemAdi", odemeYontemi);  // Kart ya da Nakit
-                        cmd.Parameters.AddWithValue("@Tutar", ToplamTutar);
+                        cmd.Parameters.AddWithValue("@YontemAdi", odemeYontemi); // "Kapıda Ödeme" veya "Kredi Kartı ile Ödeme"
+                        cmd.Parameters.AddWithValue("@MusteriID", 1);  // Örnek MüşteriID
+                        cmd.Parameters.AddWithValue("@ToplamTutar", ToplamTutar);
 
                         cmd.ExecuteNonQuery();
                     }
@@ -139,9 +129,6 @@ WHERE S.MusteriID = @MusteriID;
                 }
             }
         }
+
     }
-
-
-
-
 }

@@ -132,6 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SepetUrun.cs" />
     <Compile Include="Urun.cs" />
+    <EmbeddedResource Include="FrmCalisan.resx">
+      <DependentUpon>FrmCalisan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCalisanEkle.resx">
       <DependentUpon>FrmCalisanEkle.cs</DependentUpon>
     </EmbeddedResource>

@@ -57,9 +57,9 @@
             // 
             this.btnOdemeYap.Location = new System.Drawing.Point(163, 180);
             this.btnOdemeYap.Name = "btnOdemeYap";
-            this.btnOdemeYap.Size = new System.Drawing.Size(75, 23);
+            this.btnOdemeYap.Size = new System.Drawing.Size(113, 40);
             this.btnOdemeYap.TabIndex = 1;
-            this.btnOdemeYap.Text = "button1";
+            this.btnOdemeYap.Text = "Sipariş Oluştur";
             this.btnOdemeYap.UseVisualStyleBackColor = true;
             this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 

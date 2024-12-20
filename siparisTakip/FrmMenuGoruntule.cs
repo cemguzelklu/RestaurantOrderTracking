@@ -159,11 +159,76 @@ namespace siparisTakip
                 }
             }
         }
+        private void UrunleriFiltrele()
+        {
+            string connectionString = ConfigurationManager.ConnectionStrings["RestoranConnection"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    // Dinamik SQL sorgusu
+                    string query = @"SELECT ID, UrunAdi, Fiyat, Aciklama 
+                             FROM Urun 
+                             WHERE 1=1";
+
+                    List<SqlParameter> parameters = new List<SqlParameter>();
+
+                    // Kategori filtresi
+                    if (cmbKategoriler.SelectedValue != null && Convert.ToInt32(cmbKategoriler.SelectedValue) > 0)
+                    {
+                        query += " AND KategoriID = @KategoriID";
+                        parameters.Add(new SqlParameter("@KategoriID", cmbKategoriler.SelectedValue));
+                    }
+
+                    // Ürün adı araması
+                    if (!string.IsNullOrWhiteSpace(txtArama.Text))
+                    {
+                        query += " AND UrunAdi LIKE @UrunAdi";
+                        parameters.Add(new SqlParameter("@UrunAdi", "%" + txtArama.Text.Trim() + "%"));
+                    }
+
+                    // Fiyat aralığı filtresi
+                    if (numMinFiyat.Value > 0)
+                    {
+                        query += " AND Fiyat >= @MinFiyat";
+                        parameters.Add(new SqlParameter("@MinFiyat", numMinFiyat.Value));
+                    }
+                    if (numMaxFiyat.Value > 0 && numMaxFiyat.Value >= numMinFiyat.Value)
+                    {
+                        query += " AND Fiyat <= @MaxFiyat";
+                        parameters.Add(new SqlParameter("@MaxFiyat", numMaxFiyat.Value));
+                    }
+
+                    SqlDataAdapter da = new SqlDataAdapter(query, conn);
+                    foreach (var param in parameters)
+                    {
+                        da.SelectCommand.Parameters.Add(param);
+                    }
+
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    dgvUrunler.DataSource = dt;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ürün arama hatası: " + ex.Message);
+                }
+            }
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             FrmSepet sepetFormu = new FrmSepet(musteriID);
             sepetFormu.ShowDialog();
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            UrunleriFiltrele();
         }
     }
 }

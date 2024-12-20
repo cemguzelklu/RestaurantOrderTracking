@@ -86,6 +86,12 @@
     <Compile Include="FrmOdeme.Designer.cs">
       <DependentUpon>FrmOdeme.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRaporlama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRaporlama.Designer.cs">
+      <DependentUpon>FrmRaporlama.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSepet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOdeme.resx">
       <DependentUpon>FrmOdeme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRaporlama.resx">
+      <DependentUpon>FrmRaporlama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSepet.resx">
       <DependentUpon>FrmSepet.cs</DependentUpon>

@@ -55,5 +55,11 @@ namespace siparisTakip
         {
 
         }
+
+        private void btnRaporlama_Click(object sender, EventArgs e)
+        {
+            FrmRaporlama frmRaporlama=new FrmRaporlama();
+            frmRaporlama.ShowDialog();
+        }
     }
 }

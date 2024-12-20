@@ -38,9 +38,12 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnRaporlama = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCalisanEkle
@@ -132,11 +135,32 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Menü İşlemleri";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnRaporlama);
+            this.groupBox3.Location = new System.Drawing.Point(524, 118);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(147, 160);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Raporlama";
+            // 
+            // btnRaporlama
+            // 
+            this.btnRaporlama.Location = new System.Drawing.Point(19, 49);
+            this.btnRaporlama.Name = "btnRaporlama";
+            this.btnRaporlama.Size = new System.Drawing.Size(105, 37);
+            this.btnRaporlama.TabIndex = 0;
+            this.btnRaporlama.Text = "Raporlar";
+            this.btnRaporlama.UseVisualStyleBackColor = true;
+            this.btnRaporlama.Click += new System.EventHandler(this.btnRaporlama_Click);
+            // 
             // FrmYonetici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
@@ -146,6 +170,7 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -161,5 +186,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnRaporlama;
     }
 }

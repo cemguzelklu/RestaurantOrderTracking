@@ -6,9 +6,12 @@ namespace siparisTakip
 {
     public partial class FrmSepet : Form
     {
-        public FrmSepet()
+        private int musteriID;
+
+        public FrmSepet(int musteriID)
         {
             InitializeComponent();
+            this.musteriID = musteriID;
         }
 
         private void FrmSepet_Load(object sender, EventArgs e)
@@ -41,7 +44,9 @@ namespace siparisTakip
                     FrmMenuGoruntule.sepet.Remove(secilenUrun);
                 }
 
-                dgvSepet.Refresh();
+                dgvSepet.DataSource = null;
+                dgvSepet.DataSource = FrmMenuGoruntule.sepet;
+                dgvSepet.AutoGenerateColumns = true;
                 ToplamTutariGuncelle();
             }
             else
@@ -58,9 +63,17 @@ namespace siparisTakip
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmOdeme odemeSayfasi = new FrmOdeme();
-            odemeSayfasi.ToplamTutar = FrmMenuGoruntule.sepet.Sum(u => u.Fiyat * u.Miktar);
+            decimal toplamTutar = FrmMenuGoruntule.sepet.Sum(u => u.Fiyat * u.Miktar);
+
+            if (toplamTutar <= 0)
+            {
+                MessageBox.Show("Sepetiniz boş. Lütfen ürün ekleyin.");
+                return;
+            }
+
+            FrmOdeme odemeSayfasi = new FrmOdeme(musteriID, toplamTutar);
             odemeSayfasi.ShowDialog();
         }
+
     }
 }

@@ -27,14 +27,12 @@ namespace siparisTakip
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            // Giriş Boş Kontrolü
             if (string.IsNullOrWhiteSpace(txtEposta.Text) || string.IsNullOrWhiteSpace(txtSifre.Text))
             {
                 MessageBox.Show("Lütfen e-posta ve şifreyi doldurun.");
-                return;  // İşlemi durdur
+                return;
             }
 
-            // Veritabanı bağlantısı
             string connectionString = ConfigurationManager.ConnectionStrings["RestoranConnection"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -42,7 +40,7 @@ namespace siparisTakip
                 try
                 {
                     conn.Open();
-                    string query = "SELECT r.RolAdi FROM Kullanici k " +
+                    string query = "SELECT k.Id, r.RolAdi FROM Kullanici k " +
                                    "JOIN KullaniciRol cr ON k.Id = cr.KullaniciID " +
                                    "JOIN Rol r ON cr.RolID = r.Id " +
                                    "WHERE Eposta = @Eposta AND Sifre = @Sifre";
@@ -57,29 +55,25 @@ namespace siparisTakip
                         if (reader.HasRows)
                         {
                             reader.Read();
+                            int kullaniciID = Convert.ToInt32(reader["Id"]);
                             string rol = reader["RolAdi"].ToString();
 
-                            // Yönetici ise ana sayfaya yönlendir
                             if (rol == "Yönetici")
                             {
                                 FrmYonetici frmYonetici = new FrmYonetici();
                                 frmYonetici.Show();
-                                this.Hide(); // Giriş ekranını gizle
                             }
                             else if (rol == "Çalışan")
                             {
-                                // Çalışan için sayfa açılabilir
                                 FrmCalisan frmCalisan = new FrmCalisan();
                                 frmCalisan.Show();
-                                this.Hide(); // Giriş ekranını gizle
                             }
                             else if (rol == "Müşteri")
                             {
-                                // Müşteri için sayfa açılabilir
-                                FrmMusteri frmMusteri = new FrmMusteri();
+                                FrmMusteri frmMusteri = new FrmMusteri(kullaniciID);
                                 frmMusteri.Show();
-                                this.Hide(); // Giriş ekranını gizle
                             }
+                            this.Hide(); // Login ekranını gizle
                         }
                         else
                         {
@@ -93,7 +87,8 @@ namespace siparisTakip
                 }
             }
         }
-       
+
+
 
 
 

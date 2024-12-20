@@ -62,11 +62,23 @@
     <Compile Include="FrmCalisanSil.Designer.cs">
       <DependentUpon>FrmCalisanSil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGunlukRapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGunlukRapor.Designer.cs">
+      <DependentUpon>FrmGunlukRapor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenuGoruntule.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMenuGoruntule.Designer.cs">
       <DependentUpon>FrmMenuGoruntule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMusteriSiparisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMusteriSiparisleri.Designer.cs">
+      <DependentUpon>FrmMusteriSiparisleri.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOdeme.cs">
       <SubType>Form</SubType>
@@ -141,11 +153,17 @@
     <EmbeddedResource Include="FrmCalisanSil.resx">
       <DependentUpon>FrmCalisanSil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmGunlukRapor.resx">
+      <DependentUpon>FrmGunlukRapor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuGoruntule.resx">
       <DependentUpon>FrmMenuGoruntule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMusteri.resx">
       <DependentUpon>FrmMusteri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMusteriSiparisleri.resx">
+      <DependentUpon>FrmMusteriSiparisleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOdeme.resx">
       <DependentUpon>FrmOdeme.cs</DependentUpon>

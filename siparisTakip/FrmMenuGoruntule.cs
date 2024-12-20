@@ -10,10 +10,13 @@ namespace siparisTakip
     public partial class FrmMenuGoruntule : Form
     {
         public static List<SepetUrun> sepet = new List<SepetUrun>();
+        private int musteriID;
 
-        public FrmMenuGoruntule()
+        // Kullanıcı giriş yaptıktan sonra kimlik bilgisi alınacak
+        public FrmMenuGoruntule(int kullaniciId)
         {
             InitializeComponent();
+            musteriID = kullaniciId;
         }
 
         private void FrmMenuGoruntule_Load(object sender, EventArgs e)
@@ -45,11 +48,14 @@ namespace siparisTakip
                 }
             }
         }
-        private void cmbKategori_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UrunleriListele(Convert.ToInt32(cmbKategoriler.SelectedValue));
-        }
 
+        private void cmbKategoriler_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbKategoriler.SelectedValue != null)
+            {
+                UrunleriListele(Convert.ToInt32(cmbKategoriler.SelectedValue));
+            }
+        }
 
         private void UrunleriListele(int kategoriID)
         {
@@ -77,7 +83,6 @@ namespace siparisTakip
             }
         }
 
-
         private void dgvUrunler_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -86,11 +91,9 @@ namespace siparisTakip
                 string urunAdi = dgvUrunler.Rows[e.RowIndex].Cells["UrunAdi"].Value.ToString();
                 decimal fiyat = Convert.ToDecimal(dgvUrunler.Rows[e.RowIndex].Cells["Fiyat"].Value);
 
-                int musteriID = 1; // Örnek müşteri ID'si
                 SepeteEkle(musteriID, urunID, 1, urunAdi, fiyat); // Miktar: 1
             }
         }
-
 
         private void SepeteEkle(int musteriID, int urunID, int miktar, string urunAdi, decimal fiyat)
         {
@@ -101,36 +104,33 @@ namespace siparisTakip
                 try
                 {
                     conn.Open();
-
-                    // SQL sorgusu
                     string query = @"
-            IF NOT EXISTS (SELECT 1 FROM Sepet WHERE MusteriID = @MusteriID)
-            BEGIN
-                INSERT INTO Sepet (MusteriID, OlusturmaTarihi)
-                VALUES (@MusteriID, GETDATE());
-            END
+                    IF NOT EXISTS (SELECT 1 FROM Sepet WHERE MusteriID = @MusteriID)
+                    BEGIN
+                        INSERT INTO Sepet (MusteriID, OlusturmaTarihi)
+                        VALUES (@MusteriID, GETDATE());
+                    END
 
-            DECLARE @SepetID INT;
-            SELECT @SepetID = Id FROM Sepet WHERE MusteriID = @MusteriID;
+                    DECLARE @SepetID INT;
+                    SELECT @SepetID = Id FROM Sepet WHERE MusteriID = @MusteriID;
 
-            IF EXISTS (SELECT 1 FROM SepetUrun WHERE SepetID = @SepetID AND UrunID = @UrunID)
-            BEGIN
-                UPDATE SepetUrun
-                SET Miktar = Miktar + @Miktar
-                WHERE SepetID = @SepetID AND UrunID = @UrunID;
-            END
-            ELSE
-            BEGIN
-                INSERT INTO SepetUrun (SepetID, UrunID, Miktar)
-                VALUES (@SepetID, @UrunID, @Miktar);
-            END";
+                    IF EXISTS (SELECT 1 FROM SepetUrun WHERE SepetID = @SepetID AND UrunID = @UrunID)
+                    BEGIN
+                        UPDATE SepetUrun
+                        SET Miktar = Miktar + @Miktar
+                        WHERE SepetID = @SepetID AND UrunID = @UrunID;
+                    END
+                    ELSE
+                    BEGIN
+                        INSERT INTO SepetUrun (SepetID, UrunID, Miktar)
+                        VALUES (@SepetID, @UrunID, @Miktar);
+                    END";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@MusteriID", musteriID);
                         cmd.Parameters.AddWithValue("@UrunID", urunID);
                         cmd.Parameters.AddWithValue("@Miktar", miktar);
-
                         cmd.ExecuteNonQuery();
                     }
 
@@ -160,11 +160,9 @@ namespace siparisTakip
             }
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmSepet sepetFormu = new FrmSepet();
+            FrmSepet sepetFormu = new FrmSepet(musteriID);
             sepetFormu.ShowDialog();
         }
     }

@@ -33,14 +33,14 @@
             this.rbKart = new System.Windows.Forms.RadioButton();
             this.rbNakit = new System.Windows.Forms.RadioButton();
             this.pnlKartBilgileri = new System.Windows.Forms.Panel();
-            this.txtKartNumarasi = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txtSKT = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtKartSahibi = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCVV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtCVV = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtKartSahibi = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSKT = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtKartNumarasi = new System.Windows.Forms.TextBox();
             this.pnlKartBilgileri.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +73,7 @@
             this.rbKart.TabStop = true;
             this.rbKart.Text = "Kart İle Ödeme";
             this.rbKart.UseVisualStyleBackColor = true;
+            this.rbKart.CheckedChanged += new System.EventHandler(this.rbKart_CheckedChanged);
             // 
             // rbNakit
             // 
@@ -100,44 +101,21 @@
             this.pnlKartBilgileri.Size = new System.Drawing.Size(296, 200);
             this.pnlKartBilgileri.TabIndex = 4;
             // 
-            // txtKartNumarasi
+            // label3
             // 
-            this.txtKartNumarasi.Location = new System.Drawing.Point(123, 22);
-            this.txtKartNumarasi.Name = "txtKartNumarasi";
-            this.txtKartNumarasi.Size = new System.Drawing.Size(100, 22);
-            this.txtKartNumarasi.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(25, 167);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 16);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "CVV";
             // 
-            // textBox2
+            // txtCVV
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // txtSKT
-            // 
-            this.txtSKT.Location = new System.Drawing.Point(123, 122);
-            this.txtSKT.Name = "txtSKT";
-            this.txtSKT.Size = new System.Drawing.Size(100, 22);
-            this.txtSKT.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(22, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Kart Numarası";
-            // 
-            // txtKartSahibi
-            // 
-            this.txtKartSahibi.AutoSize = true;
-            this.txtKartSahibi.Location = new System.Drawing.Point(22, 78);
-            this.txtKartSahibi.Name = "txtKartSahibi";
-            this.txtKartSahibi.Size = new System.Drawing.Size(71, 16);
-            this.txtKartSahibi.TabIndex = 4;
-            this.txtKartSahibi.Text = "Kart Sahibi";
+            this.txtCVV.Location = new System.Drawing.Point(123, 161);
+            this.txtCVV.Name = "txtCVV";
+            this.txtCVV.Size = new System.Drawing.Size(100, 22);
+            this.txtCVV.TabIndex = 6;
             // 
             // label2
             // 
@@ -148,21 +126,44 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "SKT";
             // 
-            // txtCVV
+            // txtKartSahibi
             // 
-            this.txtCVV.Location = new System.Drawing.Point(123, 161);
-            this.txtCVV.Name = "txtCVV";
-            this.txtCVV.Size = new System.Drawing.Size(100, 22);
-            this.txtCVV.TabIndex = 6;
+            this.txtKartSahibi.AutoSize = true;
+            this.txtKartSahibi.Location = new System.Drawing.Point(22, 78);
+            this.txtKartSahibi.Name = "txtKartSahibi";
+            this.txtKartSahibi.Size = new System.Drawing.Size(71, 16);
+            this.txtKartSahibi.TabIndex = 4;
+            this.txtKartSahibi.Text = "Kart Sahibi";
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 167);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "CVV";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Kart Numarası";
+            // 
+            // txtSKT
+            // 
+            this.txtSKT.Location = new System.Drawing.Point(123, 122);
+            this.txtSKT.Name = "txtSKT";
+            this.txtSKT.Size = new System.Drawing.Size(100, 22);
+            this.txtSKT.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(123, 75);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 22);
+            this.textBox2.TabIndex = 1;
+            // 
+            // txtKartNumarasi
+            // 
+            this.txtKartNumarasi.Location = new System.Drawing.Point(123, 22);
+            this.txtKartNumarasi.Name = "txtKartNumarasi";
+            this.txtKartNumarasi.Size = new System.Drawing.Size(100, 22);
+            this.txtKartNumarasi.TabIndex = 0;
             // 
             // FrmOdeme
             // 

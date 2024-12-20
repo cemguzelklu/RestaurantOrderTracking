@@ -55,7 +55,7 @@
             this.cmbKategoriler.Name = "cmbKategoriler";
             this.cmbKategoriler.Size = new System.Drawing.Size(151, 24);
             this.cmbKategoriler.TabIndex = 1;
-            this.cmbKategoriler.SelectedIndexChanged += new System.EventHandler(this.cmbKategori_SelectedIndexChanged);
+            this.cmbKategoriler.SelectedIndexChanged += new System.EventHandler(this.cmbKategoriler_SelectedIndexChanged);
             // 
             // button1
             // 

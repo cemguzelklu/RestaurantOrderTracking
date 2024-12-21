@@ -39,7 +39,7 @@
             // 
             // dgvSiparisler
             // 
-            this.dgvSiparisler.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.dgvSiparisler.BackgroundColor = System.Drawing.Color.White;
             this.dgvSiparisler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSiparisler.Location = new System.Drawing.Point(12, 12);
             this.dgvSiparisler.Name = "dgvSiparisler";

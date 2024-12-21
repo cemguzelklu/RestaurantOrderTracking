@@ -56,7 +56,7 @@
             // 
             // dgvRapor
             // 
-            this.dgvRapor.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.dgvRapor.BackgroundColor = System.Drawing.Color.White;
             this.dgvRapor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRapor.Location = new System.Drawing.Point(298, 29);
             this.dgvRapor.Name = "dgvRapor";

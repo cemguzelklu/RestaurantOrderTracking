@@ -38,7 +38,7 @@
             // 
             // dgvSepet
             // 
-            this.dgvSepet.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.dgvSepet.BackgroundColor = System.Drawing.Color.White;
             this.dgvSepet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSepet.Location = new System.Drawing.Point(24, 30);
             this.dgvSepet.Name = "dgvSepet";
@@ -83,11 +83,11 @@
             // lblToplamTutar
             // 
             this.lblToplamTutar.AutoSize = true;
-            this.lblToplamTutar.Location = new System.Drawing.Point(113, 406);
+            this.lblToplamTutar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamTutar.Location = new System.Drawing.Point(47, 416);
             this.lblToplamTutar.Name = "lblToplamTutar";
-            this.lblToplamTutar.Size = new System.Drawing.Size(44, 16);
+            this.lblToplamTutar.Size = new System.Drawing.Size(0, 25);
             this.lblToplamTutar.TabIndex = 4;
-            this.lblToplamTutar.Text = "label1";
             // 
             // FrmSepet
             // 

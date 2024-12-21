@@ -48,7 +48,7 @@
             // 
             this.dgvUrunler.AllowUserToAddRows = false;
             this.dgvUrunler.AllowUserToDeleteRows = false;
-            this.dgvUrunler.BackgroundColor = System.Drawing.Color.DarkOrange;
+            this.dgvUrunler.BackgroundColor = System.Drawing.Color.White;
             this.dgvUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUrunler.Location = new System.Drawing.Point(3, 12);
             this.dgvUrunler.Name = "dgvUrunler";

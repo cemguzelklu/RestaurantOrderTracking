@@ -37,6 +37,7 @@
             // 
             this.dgvUrunler.AllowUserToAddRows = false;
             this.dgvUrunler.AllowUserToDeleteRows = false;
+            this.dgvUrunler.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgvUrunler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUrunler.Location = new System.Drawing.Point(1, 1);
             this.dgvUrunler.Name = "dgvUrunler";
@@ -48,19 +49,20 @@
             // 
             // btnUrunSil
             // 
+            this.btnUrunSil.BackColor = System.Drawing.Color.DarkOrange;
             this.btnUrunSil.Location = new System.Drawing.Point(342, 388);
             this.btnUrunSil.Name = "btnUrunSil";
-            this.btnUrunSil.Size = new System.Drawing.Size(129, 50);
+            this.btnUrunSil.Size = new System.Drawing.Size(134, 59);
             this.btnUrunSil.TabIndex = 1;
             this.btnUrunSil.Text = "Ürün Sil";
-            this.btnUrunSil.UseVisualStyleBackColor = true;
+            this.btnUrunSil.UseVisualStyleBackColor = false;
             this.btnUrunSil.Click += new System.EventHandler(this.btnUrunSil_Click);
             // 
             // FrmUrunSil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(808, 460);
             this.Controls.Add(this.btnUrunSil);
             this.Controls.Add(this.dgvUrunler);
             this.Name = "FrmUrunSil";

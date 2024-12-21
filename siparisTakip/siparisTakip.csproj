@@ -194,6 +194,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmKayıt.resx">
       <DependentUpon>FrmKayıt.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

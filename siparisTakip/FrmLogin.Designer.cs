@@ -37,6 +37,7 @@
             this.btnKayitOl = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,22 +77,26 @@
             // 
             // btnGiris
             // 
-            this.btnGiris.Location = new System.Drawing.Point(105, 351);
+            this.btnGiris.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnGiris.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGiris.Location = new System.Drawing.Point(144, 344);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(100, 27);
+            this.btnGiris.Size = new System.Drawing.Size(140, 45);
             this.btnGiris.TabIndex = 4;
             this.btnGiris.Text = "Giriş";
-            this.btnGiris.UseVisualStyleBackColor = true;
+            this.btnGiris.UseVisualStyleBackColor = false;
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // btnKayitOl
             // 
-            this.btnKayitOl.Location = new System.Drawing.Point(224, 351);
+            this.btnKayitOl.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnKayitOl.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnKayitOl.Location = new System.Drawing.Point(253, 437);
             this.btnKayitOl.Name = "btnKayitOl";
-            this.btnKayitOl.Size = new System.Drawing.Size(89, 27);
+            this.btnKayitOl.Size = new System.Drawing.Size(129, 45);
             this.btnKayitOl.TabIndex = 5;
             this.btnKayitOl.Text = "Kayıt Ol";
-            this.btnKayitOl.UseVisualStyleBackColor = true;
+            this.btnKayitOl.UseVisualStyleBackColor = false;
             this.btnKayitOl.Click += new System.EventHandler(this.btnKayitOl_Click);
             // 
             // pictureBox1
@@ -114,12 +119,22 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Hoş Geldiniz";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(54, 451);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 16);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Hala üyeliğiniz yok mu?";
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(471, 468);
+            this.ClientSize = new System.Drawing.Size(438, 494);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnKayitOl);
@@ -147,6 +162,7 @@
         private System.Windows.Forms.Button btnKayitOl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

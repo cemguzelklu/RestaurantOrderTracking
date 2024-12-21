@@ -54,5 +54,10 @@ namespace siparisTakip
                 MessageBox.Show("Hata: " + ex.Message);
             }
         }
+
+        private void FrmCalisanEkle_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

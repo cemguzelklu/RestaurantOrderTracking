@@ -7,6 +7,7 @@ namespace siparisTakip
 {
     public partial class FrmOdeme : Form
     {
+
         private int musteriID;
         private decimal toplamTutar;
 
@@ -26,6 +27,7 @@ namespace siparisTakip
 
         private void rbKart_CheckedChanged(object sender, EventArgs e)
         {
+            pnlKartBilgileri.Visible=true;
             pnlKartBilgileri.Visible = rbKart.Checked;
         }
 
@@ -110,6 +112,11 @@ namespace siparisTakip
                     MessageBox.Show("Hata: " + ex.Message);
                 }
             }
+        }
+
+        private void rbNakit_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlKartBilgileri.Visible=false;
         }
     }
 }

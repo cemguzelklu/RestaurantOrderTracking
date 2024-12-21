@@ -41,6 +41,7 @@ namespace siparisTakip
                     cmbKategoriler.DisplayMember = "KategoriAdi";
                     cmbKategoriler.ValueMember = "ID";
                     cmbKategoriler.DataSource = dt;
+
                 }
                 catch (Exception ex)
                 {

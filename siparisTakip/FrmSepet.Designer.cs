@@ -38,48 +38,52 @@
             // 
             // dgvSepet
             // 
+            this.dgvSepet.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgvSepet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSepet.Location = new System.Drawing.Point(24, 30);
             this.dgvSepet.Name = "dgvSepet";
             this.dgvSepet.RowHeadersWidth = 51;
             this.dgvSepet.RowTemplate.Height = 24;
-            this.dgvSepet.Size = new System.Drawing.Size(489, 240);
+            this.dgvSepet.Size = new System.Drawing.Size(612, 273);
             this.dgvSepet.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(251, 374);
+            this.button1.BackColor = System.Drawing.Color.DarkOrange;
+            this.button1.Location = new System.Drawing.Point(261, 392);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(149, 64);
             this.button1.TabIndex = 1;
             this.button1.Text = "Siparişi Onayla";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnMiktarArtır
             // 
-            this.btnMiktarArtır.Location = new System.Drawing.Point(565, 159);
+            this.btnMiktarArtır.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnMiktarArtır.Location = new System.Drawing.Point(190, 315);
             this.btnMiktarArtır.Name = "btnMiktarArtır";
-            this.btnMiktarArtır.Size = new System.Drawing.Size(75, 23);
+            this.btnMiktarArtır.Size = new System.Drawing.Size(85, 52);
             this.btnMiktarArtır.TabIndex = 2;
-            this.btnMiktarArtır.Text = "+";
-            this.btnMiktarArtır.UseVisualStyleBackColor = true;
+            this.btnMiktarArtır.Text = "Artır";
+            this.btnMiktarArtır.UseVisualStyleBackColor = false;
             this.btnMiktarArtır.Click += new System.EventHandler(this.btnMiktarArtır_Click);
             // 
             // btnMiktarAzalt
             // 
-            this.btnMiktarAzalt.Location = new System.Drawing.Point(565, 217);
+            this.btnMiktarAzalt.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnMiktarAzalt.Location = new System.Drawing.Point(371, 315);
             this.btnMiktarAzalt.Name = "btnMiktarAzalt";
-            this.btnMiktarAzalt.Size = new System.Drawing.Size(75, 23);
+            this.btnMiktarAzalt.Size = new System.Drawing.Size(85, 52);
             this.btnMiktarAzalt.TabIndex = 3;
-            this.btnMiktarAzalt.Text = "-";
-            this.btnMiktarAzalt.UseVisualStyleBackColor = true;
+            this.btnMiktarAzalt.Text = "Azalt";
+            this.btnMiktarAzalt.UseVisualStyleBackColor = false;
             this.btnMiktarAzalt.Click += new System.EventHandler(this.btnMiktarAzalt_Click);
             // 
             // lblToplamTutar
             // 
             this.lblToplamTutar.AutoSize = true;
-            this.lblToplamTutar.Location = new System.Drawing.Point(565, 351);
+            this.lblToplamTutar.Location = new System.Drawing.Point(113, 406);
             this.lblToplamTutar.Name = "lblToplamTutar";
             this.lblToplamTutar.Size = new System.Drawing.Size(44, 16);
             this.lblToplamTutar.TabIndex = 4;
@@ -89,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(720, 468);
             this.Controls.Add(this.lblToplamTutar);
             this.Controls.Add(this.btnMiktarAzalt);
             this.Controls.Add(this.btnMiktarArtır);

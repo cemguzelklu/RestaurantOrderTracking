@@ -147,12 +147,13 @@
             // 
             // btnRaporlama
             // 
+            this.btnRaporlama.BackColor = System.Drawing.Color.DarkOrange;
             this.btnRaporlama.Location = new System.Drawing.Point(19, 49);
             this.btnRaporlama.Name = "btnRaporlama";
             this.btnRaporlama.Size = new System.Drawing.Size(105, 37);
             this.btnRaporlama.TabIndex = 0;
             this.btnRaporlama.Text = "Raporlar";
-            this.btnRaporlama.UseVisualStyleBackColor = true;
+            this.btnRaporlama.UseVisualStyleBackColor = false;
             this.btnRaporlama.Click += new System.EventHandler(this.btnRaporlama_Click);
             // 
             // FrmYonetici

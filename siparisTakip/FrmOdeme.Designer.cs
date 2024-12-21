@@ -47,28 +47,31 @@
             // lblToplamTutar
             // 
             this.lblToplamTutar.AutoSize = true;
-            this.lblToplamTutar.Location = new System.Drawing.Point(102, 65);
+            this.lblToplamTutar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamTutar.Location = new System.Drawing.Point(239, 287);
             this.lblToplamTutar.Name = "lblToplamTutar";
-            this.lblToplamTutar.Size = new System.Drawing.Size(44, 16);
+            this.lblToplamTutar.Size = new System.Drawing.Size(64, 25);
             this.lblToplamTutar.TabIndex = 0;
             this.lblToplamTutar.Text = "label1";
             // 
             // btnOdemeYap
             // 
-            this.btnOdemeYap.Location = new System.Drawing.Point(163, 180);
+            this.btnOdemeYap.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnOdemeYap.Location = new System.Drawing.Point(215, 354);
             this.btnOdemeYap.Name = "btnOdemeYap";
-            this.btnOdemeYap.Size = new System.Drawing.Size(113, 40);
+            this.btnOdemeYap.Size = new System.Drawing.Size(137, 72);
             this.btnOdemeYap.TabIndex = 1;
             this.btnOdemeYap.Text = "Sipariş Oluştur";
-            this.btnOdemeYap.UseVisualStyleBackColor = true;
+            this.btnOdemeYap.UseVisualStyleBackColor = false;
             this.btnOdemeYap.Click += new System.EventHandler(this.btnOdemeYap_Click);
             // 
             // rbKart
             // 
             this.rbKart.AutoSize = true;
-            this.rbKart.Location = new System.Drawing.Point(469, 113);
+            this.rbKart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbKart.Location = new System.Drawing.Point(35, 49);
             this.rbKart.Name = "rbKart";
-            this.rbKart.Size = new System.Drawing.Size(116, 20);
+            this.rbKart.Size = new System.Drawing.Size(164, 29);
             this.rbKart.TabIndex = 2;
             this.rbKart.TabStop = true;
             this.rbKart.Text = "Kart İle Ödeme";
@@ -78,13 +81,15 @@
             // rbNakit
             // 
             this.rbNakit.AutoSize = true;
-            this.rbNakit.Location = new System.Drawing.Point(469, 167);
+            this.rbNakit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.rbNakit.Location = new System.Drawing.Point(35, 111);
             this.rbNakit.Name = "rbNakit";
-            this.rbNakit.Size = new System.Drawing.Size(59, 20);
+            this.rbNakit.Size = new System.Drawing.Size(77, 29);
             this.rbNakit.TabIndex = 3;
             this.rbNakit.TabStop = true;
             this.rbNakit.Text = "Nakit";
             this.rbNakit.UseVisualStyleBackColor = true;
+            this.rbNakit.CheckedChanged += new System.EventHandler(this.rbNakit_CheckedChanged);
             // 
             // pnlKartBilgileri
             // 
@@ -96,23 +101,25 @@
             this.pnlKartBilgileri.Controls.Add(this.txtSKT);
             this.pnlKartBilgileri.Controls.Add(this.textBox2);
             this.pnlKartBilgileri.Controls.Add(this.txtKartNumarasi);
-            this.pnlKartBilgileri.Location = new System.Drawing.Point(362, 238);
+            this.pnlKartBilgileri.Location = new System.Drawing.Point(352, 49);
             this.pnlKartBilgileri.Name = "pnlKartBilgileri";
             this.pnlKartBilgileri.Size = new System.Drawing.Size(296, 200);
             this.pnlKartBilgileri.TabIndex = 4;
+            this.pnlKartBilgileri.Visible = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(25, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(34, 16);
+            this.label3.Size = new System.Drawing.Size(55, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "CVV";
             // 
             // txtCVV
             // 
-            this.txtCVV.Location = new System.Drawing.Point(123, 161);
+            this.txtCVV.Location = new System.Drawing.Point(171, 167);
             this.txtCVV.Name = "txtCVV";
             this.txtCVV.Size = new System.Drawing.Size(100, 22);
             this.txtCVV.TabIndex = 6;
@@ -120,47 +127,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(25, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 16);
+            this.label2.Size = new System.Drawing.Size(53, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "SKT";
             // 
             // txtKartSahibi
             // 
             this.txtKartSahibi.AutoSize = true;
+            this.txtKartSahibi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtKartSahibi.Location = new System.Drawing.Point(22, 78);
             this.txtKartSahibi.Name = "txtKartSahibi";
-            this.txtKartSahibi.Size = new System.Drawing.Size(71, 16);
+            this.txtKartSahibi.Size = new System.Drawing.Size(108, 25);
             this.txtKartSahibi.TabIndex = 4;
             this.txtKartSahibi.Text = "Kart Sahibi";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.Location = new System.Drawing.Point(22, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 16);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 3;
             this.label1.Text = "Kart Numarası";
             // 
             // txtSKT
             // 
-            this.txtSKT.Location = new System.Drawing.Point(123, 122);
+            this.txtSKT.Location = new System.Drawing.Point(171, 131);
             this.txtSKT.Name = "txtSKT";
             this.txtSKT.Size = new System.Drawing.Size(100, 22);
             this.txtSKT.TabIndex = 2;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(123, 75);
+            this.textBox2.Location = new System.Drawing.Point(171, 78);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 1;
             // 
             // txtKartNumarasi
             // 
-            this.txtKartNumarasi.Location = new System.Drawing.Point(123, 22);
+            this.txtKartNumarasi.Location = new System.Drawing.Point(171, 22);
             this.txtKartNumarasi.Name = "txtKartNumarasi";
             this.txtKartNumarasi.Size = new System.Drawing.Size(100, 22);
             this.txtKartNumarasi.TabIndex = 0;
@@ -169,7 +179,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(705, 448);
             this.Controls.Add(this.pnlKartBilgileri);
             this.Controls.Add(this.rbNakit);
             this.Controls.Add(this.rbKart);

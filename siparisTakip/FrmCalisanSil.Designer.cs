@@ -37,29 +37,31 @@
             // 
             this.dgvCalisanlar.AllowUserToAddRows = false;
             this.dgvCalisanlar.AllowUserToDeleteRows = false;
+            this.dgvCalisanlar.BackgroundColor = System.Drawing.Color.DarkOrange;
             this.dgvCalisanlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalisanlar.Location = new System.Drawing.Point(4, 12);
             this.dgvCalisanlar.Name = "dgvCalisanlar";
             this.dgvCalisanlar.ReadOnly = true;
             this.dgvCalisanlar.RowHeadersWidth = 51;
-            this.dgvCalisanlar.Size = new System.Drawing.Size(784, 365);
+            this.dgvCalisanlar.Size = new System.Drawing.Size(735, 310);
             this.dgvCalisanlar.TabIndex = 0;
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(301, 383);
+            this.btnSil.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnSil.Location = new System.Drawing.Point(287, 358);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(155, 55);
             this.btnSil.TabIndex = 1;
             this.btnSil.Text = "Sil";
-            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.UseVisualStyleBackColor = false;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // FrmCalisanSil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(769, 440);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.dgvCalisanlar);
             this.Name = "FrmCalisanSil";

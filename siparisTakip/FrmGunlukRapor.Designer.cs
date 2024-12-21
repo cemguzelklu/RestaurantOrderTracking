@@ -37,42 +37,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 81);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(84, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 16);
+            this.label1.Size = new System.Drawing.Size(136, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Sipariş Sayısı:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 129);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(82, 133);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 16);
+            this.label2.Size = new System.Drawing.Size(156, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Toplam Kazanç:";
             // 
             // lblSiparisSayisi
             // 
             this.lblSiparisSayisi.AutoSize = true;
-            this.lblSiparisSayisi.Location = new System.Drawing.Point(258, 81);
+            this.lblSiparisSayisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblSiparisSayisi.Location = new System.Drawing.Point(287, 71);
             this.lblSiparisSayisi.Name = "lblSiparisSayisi";
-            this.lblSiparisSayisi.Size = new System.Drawing.Size(0, 16);
+            this.lblSiparisSayisi.Size = new System.Drawing.Size(0, 25);
             this.lblSiparisSayisi.TabIndex = 2;
             // 
             // lblToplamTutar
             // 
             this.lblToplamTutar.AutoSize = true;
-            this.lblToplamTutar.Location = new System.Drawing.Point(258, 140);
+            this.lblToplamTutar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblToplamTutar.Location = new System.Drawing.Point(287, 130);
             this.lblToplamTutar.Name = "lblToplamTutar";
-            this.lblToplamTutar.Size = new System.Drawing.Size(0, 16);
+            this.lblToplamTutar.Size = new System.Drawing.Size(0, 25);
             this.lblToplamTutar.TabIndex = 3;
             // 
             // FrmGunlukRapor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(590, 255);
             this.Controls.Add(this.lblToplamTutar);
             this.Controls.Add(this.lblSiparisSayisi);
             this.Controls.Add(this.label2);

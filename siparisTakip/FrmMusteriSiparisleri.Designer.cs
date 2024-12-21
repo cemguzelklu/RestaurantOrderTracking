@@ -36,21 +36,21 @@
             // 
             this.dgvMusteriSiparisleri.AllowUserToAddRows = false;
             this.dgvMusteriSiparisleri.AllowUserToDeleteRows = false;
+            this.dgvMusteriSiparisleri.BackgroundColor = System.Drawing.Color.White;
             this.dgvMusteriSiparisleri.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMusteriSiparisleri.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMusteriSiparisleri.Location = new System.Drawing.Point(0, 0);
             this.dgvMusteriSiparisleri.Name = "dgvMusteriSiparisleri";
             this.dgvMusteriSiparisleri.ReadOnly = true;
             this.dgvMusteriSiparisleri.RowHeadersWidth = 51;
             this.dgvMusteriSiparisleri.RowTemplate.Height = 24;
-            this.dgvMusteriSiparisleri.Size = new System.Drawing.Size(800, 450);
+            this.dgvMusteriSiparisleri.Size = new System.Drawing.Size(477, 432);
             this.dgvMusteriSiparisleri.TabIndex = 0;
             // 
             // FrmMusteriSiparisleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(480, 444);
             this.Controls.Add(this.dgvMusteriSiparisleri);
             this.Name = "FrmMusteriSiparisleri";
             this.Text = "FrmMusteriSiparisleri";

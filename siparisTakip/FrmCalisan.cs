@@ -38,7 +38,7 @@ namespace siparisTakip
                 {
                     con.Open();
                     string query = @"
-                    SELECT 
+                     SELECT 
                         S.Id AS SiparisNo,
                         U.UrunAdi AS Ürün,
                         K.Ad,
@@ -111,15 +111,7 @@ namespace siparisTakip
 
                         MessageBox.Show("Sipariş durumu güncellendi!");
 
-                        // "Teslim Edildi" durumuna geçtiyse satırı sil
-                        if (yeniDurum == 3)
-                        {
-                            dgvSiparisler.Rows.RemoveAt(dgvSiparisler.SelectedRows[0].Index);
-                        }
-                        else
-                        {
-                            SiparisleriListele();  // Güncellemeden sonra listeyi yenile
-                        }
+                     
                     }
                     catch (Exception ex)
                     {
@@ -150,6 +142,11 @@ namespace siparisTakip
         {
             FrmGunlukRapor frmGunlukRapor=new FrmGunlukRapor();
             frmGunlukRapor.ShowDialog();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
